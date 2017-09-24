@@ -1,0 +1,7 @@
+Vague hypothesis is that some specific nucleotide is being mutated to some other specific nucleotide
+- need to think of test statistic T
+- need to think of way to generate specific model/hypothesis H0 to simulate test statistic T
+
+Test statistic: sum of difference between (percentage(nonP) and percentage(P))
+specific Hypothesis: sum of the absolute value of the differences, or sum of the differences squared, will be high if the specific nucleotide is being mutated to another
+
