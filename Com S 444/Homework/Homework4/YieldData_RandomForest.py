@@ -10,8 +10,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn import preprocessing
 
 # Read the training and testing files
-train = pd.read_csv("./YieldData_P3/(Train)WeatherDataset_NA.csv",sep=',')
-test = pd.read_csv("./YieldData_P3/(Test)WeatherDataset_NA.csv",sep=',')
+train = pd.read_csv("yield.train.csv",sep=',')
+test = pd.read_csv("yield.test.csv",sep=',')
 
 # We replace the "NAs" with the median of that column.
 for col in [np.r_[4:20]]:

@@ -1,1 +1,3 @@
 hpc-class.its.iastate.edu
+
+pscp sanderv@ hpc-class.its.iastate.edu:/home/sanderv/path_to_file/file newfileName
