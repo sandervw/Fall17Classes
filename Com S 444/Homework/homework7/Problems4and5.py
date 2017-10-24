@@ -16,6 +16,14 @@ def SimCalc(string1, string2):
 #----------------------Problem 4----------------------
 #-----------------------------------------------------
 
+def PrintMatrix(matrix):
+    for i in range (0, len(matrix)):
+        row = '['
+        for j in range (0, len(matrix[i])):
+            row += (str(round(matrix[i][j], 4)) + '\t')
+        row += ']'
+        print row
+
 animals = []
 
 animals.insert(0, ['dog', 'ATGACCAACATTCGAAAAACCCACCCACTA'])
@@ -33,7 +41,7 @@ for i in range(0, len(animals)):
 #-----------------------------------------------------
 #----------------------Problem 5----------------------
 #-----------------------------------------------------
-
+print '\n'
 #set of all matrices and animal names
 matrices = []
 animalList = []
@@ -49,8 +57,6 @@ for i in range(0, len(animals)):
         temp = JukesCantorCalc(SimCalc(animals[i][1], animals[j][1]))
         distances1[i].insert(j, temp)
 
-print distances1
-
 #add the first distance to the matrix
 matrices.insert(0, distances1)
 
@@ -60,6 +66,9 @@ animalNames1.insert(1, ['cat', 1])
 animalNames1.insert(2, ['mouse', 1])
 animalNames1.insert(3, ['pig', 1])
 animalNames1.insert(4, ['human', 1])
+
+print animalNames1
+PrintMatrix(distances1)
 
 animalList.insert(0, animalNames1)
 
@@ -95,6 +104,7 @@ for matrixIter in range (newSize, 2, -1):
             continue
         else:
             animalNames.append([oldAnimalNames[i][0], oldAnimalNames[i][1]])
+    print '\n'
     print animalNames
     animalList.append(animalNames)
 
@@ -121,16 +131,17 @@ for matrixIter in range (newSize, 2, -1):
                 distances[i].insert(j, result)
             elif(l == smallestI):
                 tempDist1 = (oldAnimalNames[smallestI][1] * 1.0 / (oldAnimalNames[smallestI][1] * 1.0 + oldAnimalNames[smallestJ][1]) * 1.0)
-                tempDist2 = oldDistances[smallestI][l] * 1.0
+                tempDist2 = oldDistances[smallestI][k] * 1.0
                 tempDist3 = (oldAnimalNames[smallestJ][1] * 1.0 / (oldAnimalNames[smallestI][1] * 1.0 + oldAnimalNames[smallestJ][1]) * 1.0)
-                tempDist4 = oldDistances[smallestJ][l] * 1.0
+                tempDist4 = oldDistances[smallestJ][k] * 1.0
                 result = (tempDist1 * tempDist2) + (tempDist3 * tempDist4)
                 distances[i].insert(j, result)
             else:
                 distances[i].insert(j, oldDistances[k][l])
             l+=1
         k+=1
-    print distances
+    
+    PrintMatrix(distances)
     matrices.append(distances)
     
     oldAnimalNames = animalNames
