@@ -157,7 +157,7 @@ for matrixIter in range (newSize, 2, -1):
         k+=1
     matrices.append(distances)
     
-    #replace the old matrix with the new ones we made
+    #replace the old matrix and animal names with the new ones we made
     oldAnimalNames = animalNames
     oldDistances = distances
 
